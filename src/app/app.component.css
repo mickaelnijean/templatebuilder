@@ -1,0 +1,14 @@
+.container {
+    height: 100%;
+    display: flex;
+}
+
+.main {
+    height: 100%;
+    width: 70%
+}
+
+.trouser {
+    height: 100%;
+    width: 30%
+}
