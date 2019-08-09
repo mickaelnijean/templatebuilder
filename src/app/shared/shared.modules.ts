@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { MaterialModule } from './material/material.module';
-import { DragDropModule } from './drag-drop/drag-drop.module';
+import { AppDragDropModule } from './drag-drop/app-drag-drop.module';
 
 @NgModule({
     imports: [
-        DragDropModule
+        AppDragDropModule
     ],
     exports: [
         MaterialModule,
-        DragDropModule
+        AppDragDropModule
     ]
 })
 export class SharedModule { }

@@ -1,11 +1,22 @@
 <mat-card>header</mat-card>
 
 <div class="container">
-    <mat-card class="main">Drop the mic here</mat-card>
+    <mat-card class="main">Drop the mic here
+        <mat-card-content>
+            <div cdkDropList #doneList="cdkDropList" (cdkDropListDropped)="drop($event)" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList]">
+                <template #dyn></template>
+                <button (click)="createInputComponent('search')">Create input</button>
+                <button (click)="createDatepickerComponent()">Create datepicker</button>
+            </div>
+        </mat-card-content>
+    </mat-card>
     <mat-card class="trouser">
         <mat-card-title>Drag the mic here</mat-card-title>
         <mat-card-content>
-            <app-drag-drop-input></app-drag-drop-input>
+            <div cdkDropList #todoList="cdkDropList" (cdkDropListDropped)="drop($event)" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList]">
+                <app-drag-drop-input></app-drag-drop-input>
+                <app-date-picker-input></app-date-picker-input>
+            </div>
         </mat-card-content>
     </mat-card>
 </div>
